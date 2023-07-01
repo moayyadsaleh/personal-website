@@ -1,0 +1,653 @@
+/* Google Font CDN Link */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&family=Ubuntu:wght@400;500;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  scroll-behavior: smooth;
+  font-family: serif;
+}
+
+p {
+font-size: 18px;
+}
+/* Custom Scroll Bar CSS */
+::-webkit-scrollbar {
+    width: 10px;
+}
+::-webkit-scrollbar-track {
+    background: #D2B48C;
+}
+::-webkit-scrollbar-thumb {
+    background:black ;
+    border-radius: 12px;
+    transition: all 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: maroon;
+}
+/* navbar styling */
+nav .navbar .menu a {
+  text-decoration: none;
+}
+
+
+nav{
+  position: fixed;
+  width: 100%;
+  padding: 20px 0;
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: serif;
+}
+nav.sticky{
+  background: black;
+  padding: 0px 0;
+}
+nav .navbar{
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: auto;
+}
+nav .navbar .logo a{
+  font-weight: 500;
+  font-size: 35px;
+  color:#D2B48C;
+  text-decoration: none;
+}
+nav.sticky .navbar .logo a{
+  color: #D2B48C;
+}
+nav .navbar .menu{
+  display: flex;
+  position: relative;
+}
+nav .navbar .menu li{
+  list-style: none;
+  margin: 0 8px;
+}
+.navbar .menu a{
+  font-size: 18px;
+  font-weight: 500;
+  color: #D2B48C;
+  padding: 6px 0;
+  transition: all 0.4s ease;
+}
+.navbar .menu a:hover{
+  color:#FFFFFF;
+}
+nav.sticky .menu a{
+  color: #D2B48C;
+}
+nav.sticky .menu a:hover{
+  color: white;
+}
+.navbar .media-icons a{
+  color: #D2B48C;
+  font-size: 18px;
+  margin: 0 6px;
+}
+nav.sticky .media-icons a{
+  color: #D2B48C;
+}
+
+/* Side Navigation Menu Button CSS */
+nav .menu-btn,
+.navbar .menu .cancel-btn{
+  position: absolute;
+  color: #D2B48C;
+  right: 30px;
+  top: 20px;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: none;
+}
+nav .menu-btn{
+  color: #D2B48C;
+}
+nav.sticky .menu-btn{
+  color: #D2B48C;
+}
+.navbar .menu .menu-btn{
+  color: #D2B48C;
+}
+
+/* home section styling */
+.home{
+  height: 100vh;
+  width: 100%;
+  background: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT8PRk2bRJ6kl6JFEG_r9a2Dt7K0lm12Ip_7aPUTfkOVjLK97RTo8ESoq2gfTr_p65NSRQ&usqp=CAU") no-repeat;
+  background-size: cover;
+  background-position: left;
+  background-attachment: fixed;
+  font-family: serif;
+}
+.home .home-content{
+  width: 90%;
+  height: 100%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.home .text-one{
+  font-size: 30px;
+  color: #D2B48C;
+}
+.home .text-two{
+  color:#800000;
+  font-size: 75px;
+  font-weight: 600;
+  margin-left: -3px;
+}
+.home .text-three{
+  font-size: 40px;
+  margin: 5px 0;
+  color: #D2B48C;
+}
+
+.home .button{
+  margin: 14px 0;
+}
+.home .button button{
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-size: 25px;
+  font-weight: 400;
+  background: #800000;
+  color: #D2B48C;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.4s ease;
+}
+.home .button button:hover{
+  border-color:D2B48C;
+  background-color: black;
+  color: white;
+}
+
+/* About Section Styling */
+
+section{
+  padding-top: 40px;
+}
+section .content{
+  width: 80%;
+  margin: 40px auto;
+  font-family: serif;
+
+}
+.about .about-details{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+section .title{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 40px;
+}
+section .title span{
+  color: #D2B48C;
+  font-size: 50px;
+  font-weight: 600;
+  position: relative;
+  padding-bottom: 8px;
+}
+section .title span::before,
+section .title span::after{
+  content: '';
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  background: maroon;
+  left: 0;
+  bottom: 0;
+}
+section .title span::after{
+  bottom: -7px;
+  width: 70%;
+  left: 50%;
+  transform: translateX(-50%);
+}
+.about .about-details .left{
+  width: 60%;
+}
+.about .left img{
+  height: 500px;
+  width: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+.about-details .right{
+  width: 55%;
+}
+section  .topic{
+  color: maroon;
+  font-size: 30px;
+  font-weight: 500;
+  margin-bottom: 10px;
+}
+.about-details .right p{
+  text-align: justify;
+  color: black;
+}
+section .button{
+  margin: 16px 0;
+}
+section .button button{
+  outline: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 25px;
+  font-weight: 400;
+  background: maroon;
+  color: #D2B48C;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+section .button button:hover{
+  border-color: #D2B48C;
+  background-color: black;
+  color: white;
+}
+
+ /* My Skills CSS */
+ .skills .content{
+   padding: 40px 0;
+ }
+ .skills .skills-details{
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+ }
+ .skills-details .text{
+   width: 50%;
+ }
+ .skills-details p{
+   color: white;
+   text-align: justify;
+ }
+.skills .skills-details .experience{
+  display: flex;
+  align-items: center;
+  margin: 0 10px;
+}
+.skills-details .experience .num{
+  color: white;
+  font-size: 80px;
+}
+.skills-details .experience .exp{
+  color: white;
+  margin-left: 20px;
+  font-size: 18px;
+  font-weight: 500;
+  margin: 0 6px;
+}
+.skills-details .boxes{
+  width: 45%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.skills-details .box{
+  width: calc(100% / 2 - 20px);
+  margin: 20px 0;
+}
+.skills-details .boxes .topic{
+  font-size: 20px;
+  color: black;
+}
+.skills-details .boxes .per{
+  font-size: 60px;
+  color: black;
+}
+
+/* My Services CSS */
+.services .boxes{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.services .boxes .box{
+  margin: 10px 0;
+  width: calc(100% / 3 - 20px);
+  text-align: center;
+  border-radius: 12px;
+  padding: 10px 10px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12);
+  cursor: default;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover{
+  background: black;
+  color: #fff;
+}
+.services .boxes .box .icon{
+  height: 50px;
+  width: 50px;
+  background: white;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 37px;
+  color: maroon;
+  margin: 0 auto 10px auto;
+  transition: all 0.4s ease;
+}
+.boxes .box:hover .icon{
+  background-color:black;
+  color: maroon;
+}
+.services .boxes .box:hover .topic,
+.services .boxes .box:hover p{
+  color: white;
+  transition: all 0.4s ease;
+}
+.services .boxes .box:hover .topic{
+  color: #D2B48C;
+}
+
+.services .boxes .box:hover p{
+  color: #fff;
+}
+/* Contact Me CSS */
+.contact{
+  background: black;
+}
+.contact .content{
+  margin: 0 auto;
+  padding: 40px 0;
+
+}
+.contact .text{
+  width: 80%;
+  text-align: center;
+  margin: auto;
+  color: white;
+  font-size: 20px;
+}
+
+/* Footer CSS */
+footer{
+  background: black;
+  padding: 15px 0;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+footer .text span{
+  font-size: 17px;
+  font-weight: 400;
+  color:#D2B48C;
+}
+footer .text span a{
+  font-weight: 500;
+  color: #FFF;
+}
+footer .text span a:hover{
+  text-decoration: underline;
+}
+/* Scroll TO Top Button CSS */
+.scroll-button a{
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  color: #D2B48C;
+  background: maroon;
+  padding: 7px 12px;;
+  font-size: 18px;
+  border-radius: 6px;
+  box-shadow: rgba(0, 0, 0, 0.15);
+  display: none;
+}
+
+
+/* Responsive Media Query */
+@media (max-width: 1190px) {
+  section .content{
+    width: 85%;
+  }
+}
+@media (max-width: 1000px) {
+  .about .about-details{
+    justify-content: center;
+    flex-direction: column;
+  }
+  .about .about-details .left{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+  }
+  .about-details .right{
+    width: 90%;
+    margin: 40px 0;
+  }
+  .services .boxes .box{
+    margin: 20px 0;
+    width: calc(100% / 2 - 20px);
+  }
+}
+@media (max-width: 900px) {
+  .about .left img{
+    height: 350px;
+    width: 350px;
+  }
+}
+
+@media (max-width: 750px) {
+  nav .navbar{
+    width: 90%;
+  }
+  nav .navbar .menu{
+    position: fixed;
+    left: -100%;
+    top: 0;
+    background: black;
+    height: 100vh;
+    max-width: 400px;
+    width: 100%;
+    padding-top: 60px;
+    flex-direction: column;
+    align-items: center;
+    transition: all 0.5s ease;
+  }
+  .navbar.active .menu{
+    left: 0;
+  }
+  nav .navbar .menu a{
+    font-size: 23px;
+    display: block;
+    color: #fff;
+    margin: 10px 0;
+  }
+  nav.sticky .menu a:hover{
+    color: maroon;
+  }
+  nav .navbar .media-icons{
+    display: none;
+  }
+  nav .menu-btn,
+  .navbar .menu .cancel-btn{
+    display: block;
+  }
+  .home .text-two{
+    font-size: 65px;
+  }
+  .home .text-three{
+    font-size: 35px;
+  }
+  .skills .skills-details{
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
+  .skills-details .text{
+    width: 100%;
+    margin-bottom: 50px;
+  }
+  .skills-details .boxes{
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
+  .services .boxes .box{
+    margin: 20px 0;
+    width: 100%;
+  }
+  .contact .text{
+    width: 100%;
+}
+}
+
+@media (max-width: 500px){
+  .home .text-two{
+    font-size: 55px;
+  }
+  .home .text-three{
+    font-size: 33px;
+  }
+  .skills-details .boxes .per{
+    font-size: 50px;
+    color:maroon;
+  }
+}
+.media-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  align-self: center;
+}
+
+.media-icons a {
+  margin: 15px 15px;
+  color: #D2B48C;
+  font-size: 25px;
+}
+
+
+.feature {
+  color: maroon;
+}
+.container {
+  background: #D2B48C;
+}
+
+
+.custom-box {
+  background-color: #D2B48C;
+}
+
+
+ /* Add cool effects to custom-box elements */
+ .custom-box {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.custom-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.custom-box:hover {
+  transform: translateY(-5px);
+}
+
+.custom-box:hover::before {
+  opacity: 1;
+}
+
+/* Additional styling for text */
+.custom-box h3 {
+  color: #fff;
+  transition: color 0.3s ease;
+}
+
+.custom-box:hover h3 {
+  color: #D2B48C;
+}
+
+.custom-box p {
+  color: black;
+  transition: color 0.3s ease;
+}
+
+.custom-box:hover p {
+  color: black;
+}
+
+.fixed-button {
+  width: 200px; /* Set the desired width of the button */
+  height: 50px;
+  display: flexbox;
+  position:static;
+  justify-content:flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+  margin-left: 100px;
+  margin-top: 50px;
+  padding-left: 0%;
+  margin-bottom: 50px;
+  padding-right:0%;
+
+  /* Set the desired height of the button */
+  /* Add any other styling you want for the button */
+}
+.custom-bg-color {
+  background-color: black;
+}
+.custom-text-color {
+  color: white;
+}
+
+#showcase {
+  color:#D2B48C ;
+
+}
+
+
+.card {
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.05);
+  background-color: black;
+  color: white;
+}
+
+.card-img-top {
+  object-fit: cover;
+}
+
+.btn-group button {
+  transition: background-color 0.3s ease;
+}
+
+.btn-group button:hover {
+  background-color: maroon;
+  color: #fff;
+}
+
+.col:hover {
+  transform: scale(1.05); /* Increase the size of the box on hover */
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Add a subtle box shadow */
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Add smooth transition animation */
+}
