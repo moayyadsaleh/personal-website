@@ -1,5 +1,5 @@
 # personal-website
-This repository contains the source code and assets for my personal website. It serves as a central hub for showcasing my skills, projects, and experiences to potential employers, clients, and the online community.
+This repository contains the source code and assets for my personal website. It serves as a central hub for showcasing my skills, projects, and experiences.
 
 The purpose of this website is to provide an online presence that represents my professional identity. It serves as a platform to:
 
