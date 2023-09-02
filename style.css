@@ -674,3 +674,10 @@ footer a {
   background: url("https://www.whoa.in/download/dark-green-glare-wavy-lines-black-background-hd-dark-green-wallpaper-free-download")
     no-repeat;
 }
+
+.my-story-paragraph {
+  padding-left: 50px;
+  padding-right: 30px;
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
