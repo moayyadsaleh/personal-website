@@ -671,8 +671,7 @@ footer a {
 }
 
 .about-background {
-  background: url("https://www.whoa.in/download/dark-green-glare-wavy-lines-black-background-hd-dark-green-wallpaper-free-download")
-    no-repeat;
+  background: url("./images/myStoryBackground.jpg") no-repeat;
 }
 
 .my-story-paragraph {
