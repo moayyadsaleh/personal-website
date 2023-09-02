@@ -669,3 +669,8 @@ footer a {
 .quote {
   background: url("./images/projectsBackground.jpg") no-repeat;
 }
+
+.about-background {
+  background: url("https://www.whoa.in/download/dark-green-glare-wavy-lines-black-background-hd-dark-green-wallpaper-free-download")
+    no-repeat;
+}
