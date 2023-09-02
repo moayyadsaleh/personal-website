@@ -662,3 +662,6 @@ footer .text span a:hover {
 footer a {
   text-decoration: none;
 }
+.clickable-div {
+  cursor: pointer; /* Change cursor to a pointer on hover */
+}

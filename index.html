@@ -52,8 +52,9 @@
       </div>
       <div class="button">
         <a href="#projects">
-          <button>Discover My Portfolio</button>
+          <button>View Projects</button>
         </a>
+      </div>
       </div>
   </section>
 
@@ -292,16 +293,12 @@
         </div>
       </div>
 
-      <div class="col">
+      <div class="col clickable-div">
         <div class="card shadow-sm">
-          <img src="./Images/Simon Says.png" class="bd-placeholder-img card-img-top" width="100%" height="225" alt="Image 6">
+          <img src="https://e1.pxfuel.com/desktop-wallpaper/937/226/desktop-wallpaper-data-structures-and-algorithms-are-they-really-necessary.jpg" class="bd-placeholder-img card-img-top" width="100%" height="225" alt="Image 6">
           <div class="card-body">
-            <p class="card-text">Simon Says: Interactive game play, built using DOM manipulation, event handling, audio feedback, and CSS styling. </p>
+            <p class="card-text">Click Here to View More Projects </p>
             <div class="d-flex justify-content-between align-items-center">
-              <div class="btn-group">
-                <a href="https://moayyadsaleh.github.io/simon-says/" class="btn btn-sm btn-outline-secondary">Demo</a>
-                <a href="https://github.com/moayyadsaleh/simon-says" class="btn btn-sm btn-outline-secondary">GitHub</a>
-              </div>
             </div>
           </div>
         </div>
@@ -339,6 +336,15 @@
       const currentYear = new Date().getFullYear();
       // Set the current year in the HTML element
       document.getElementById('currentYear').textContent = currentYear;
+    </script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".clickable-div").click(function() {
+          window.location = "./more-projects.html"; // Replace with the URL you want to navigate to
+        });
+      });
     </script>
   </body>
 </html>
