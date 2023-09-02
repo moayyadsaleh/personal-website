@@ -665,3 +665,8 @@ footer a {
 .clickable-div {
   cursor: pointer; /* Change cursor to a pointer on hover */
 }
+
+.quote {
+  background: url("https://www.hdwallpapers.in/download/tunnel_lights_reflection_on_road_black_background_hd_black_background-1920x1080.jpg")
+    no-repeat;
+}
