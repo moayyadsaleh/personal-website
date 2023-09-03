@@ -682,3 +682,46 @@ footer a {
   padding-top: 50px;
   padding-bottom: 50px;
 }
+
+/* Starts Here*/
+.services .box p {
+  text-align: left;
+}
+/* Add this CSS to your stylesheet or within a <style> tag in your HTML file */
+.learning .topics {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.learning .topic {
+  display: flex;
+  align-items: center;
+  margin-right: 20px; /* Adjust the spacing between items */
+}
+
+.learning .topic:last-child {
+  margin-right: 0; /* Remove margin for the last item */
+}
+
+.custom-top-padding {
+  padding-top: 30px; /* Adjust the value as needed for the desired top padding */
+}
+
+.learning-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  background-color: black; /* Add your desired background color here */
+  color: whitesmoke; /* Text color for better visibility on the background */
+  padding: 20px; /* Add padding for spacing */
+  border-radius: 8px; /* Add rounded corners for a nicer look */
+}
+
+.icon {
+  font-size: 36px;
+  margin-bottom: 10px;
+  color: #d2b48c;
+}
