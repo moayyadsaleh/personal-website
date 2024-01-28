@@ -737,12 +737,12 @@ footer a {
 }
 
 .project-img {
-  max-width: 120%;
+  max-width: 100%;
   height: auto;
   border-radius: 8px;
   margin-bottom: 15px;
   /* Set a slightly larger width for the project images */
-  width: 300px;
+  width: 550px;
 }
 
 .project-description {
@@ -752,14 +752,28 @@ footer a {
 .project-links a {
   display: inline-block;
   margin-right: 15px;
-  color: #333;
+  color: #d2b48c;
   text-decoration: none;
   padding: 8px 12px;
-  background-color: #eee;
+  background-color: black;
   border-radius: 4px;
   transition: background-color 0.3s ease;
 }
 
 .project-links a:hover {
-  background-color: #ddd;
+  background-color: maroon;
+}
+header {
+  background-color: black;
+  color: #d2b48c;
+  text-align: center;
+  padding: 1em;
+  /* Center the header using Flexbox */
+  display: flex;
+  justify-content: center;
+}
+.disabled-link {
+  color: #999;
+  pointer-events: none; /* Disable pointer events */
+  cursor: not-allowed; /* Change cursor to not-allowed */
 }
