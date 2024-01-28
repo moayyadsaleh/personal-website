@@ -797,9 +797,12 @@ header {
 }
 
 .highlight {
-  background-color: maroon;
-  color: d2b48c;
+  background-color: black;
+  color: #d2b48c;
   padding: 5px;
   border-radius: 4px;
   font-weight: bold;
+}
+#services {
+  margin-top: 10px !important; /* Adjust the value as needed */
 }
