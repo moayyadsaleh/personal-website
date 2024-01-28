@@ -777,3 +777,29 @@ header {
   pointer-events: none; /* Disable pointer events */
   cursor: not-allowed; /* Change cursor to not-allowed */
 }
+
+.philosophy-container {
+  max-width: 800px;
+  margin: 20px auto;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.philosophy-content {
+  margin-bottom: 15px;
+}
+
+.philosophy-content p {
+  line-height: 1.6;
+}
+
+.highlight {
+  background-color: maroon;
+  color: d2b48c;
+  padding: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+}
