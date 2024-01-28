@@ -804,5 +804,40 @@ header {
   font-weight: bold;
 }
 #services {
-  margin-top: 10px !important; /* Adjust the value as needed */
+  margin-top: 10px !important;
+}
+
+.media-icons {
+  display: flex;
+  flex-direction: column; /* Change to column on small screens */
+  align-items: center;
+  margin-top: 20px;
+}
+
+.contact-link {
+  text-decoration: none;
+  color: #d2b48c; /* D2B48C color for details */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 10px; /* Adjust the margin as needed */
+}
+
+.contact-link i {
+  font-size: 30px; /* Increase the icon font size */
+  color: #fff; /* Whitesmoke color for icons */
+  margin-bottom: 5px;
+}
+
+.contact-link span {
+  font-size: 18px; /* Increase the text font size */
+  padding-top: 5px; /* Adjust the padding as needed */
+}
+
+/* Media Query for Mobile */
+@media only screen and (max-width: 600px) {
+  .media-icons {
+    flex-direction: row; /* Change to row on small screens */
+    justify-content: space-around;
+  }
 }
