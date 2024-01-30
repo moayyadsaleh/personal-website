@@ -844,3 +844,7 @@ header {
     justify-content: space-around;
   }
 }
+a:hover {
+  color: #7e5835; /* Change the color on hover */
+  text-decoration: underline; /* Add underline on hover */
+}
