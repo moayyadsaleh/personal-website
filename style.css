@@ -32,7 +32,10 @@ p {
 nav .navbar .menu a {
   text-decoration: none;
 }
-
+::selection {
+  background-color: maroon; /* Set your desired background color */
+  color: whitesmoke; /* Set your desired text color */
+}
 nav {
   position: fixed;
   width: 100%;
