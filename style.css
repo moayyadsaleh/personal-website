@@ -886,3 +886,9 @@ header {
   margin-top: 10px;
   padding-top: 10px;
 }
+.styled-more-content {
+  max-height: 400px; /* Adjust height as needed */
+  overflow-y: auto;
+  border: 1px solid maroon; /* Optional styling */
+  padding: 10px; /* Optional styling */
+}

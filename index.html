@@ -78,7 +78,7 @@
         <div class="title"><span>About</span></div>
         <div class="about-details">
           <div class="left">
-            <img src="./Images/Moayyad;s Pic.png" alt="" />
+            <img src="./Images/IMG_5744.JPG" alt="" />
           </div>
           <div class="right">
             <p>
@@ -262,7 +262,6 @@
           >
             Show More Details
           </a>
-
           <!-- Content to be revealed, styled with maroon border -->
           <div
             id="more-content-1"
@@ -728,15 +727,33 @@
         var moreContent = document.getElementById(contentId);
         var readMoreLink = document.getElementById(linkId);
 
+        // Define the scroll event handler
+        function onScroll() {
+          if (
+            moreContent.scrollTop + moreContent.clientHeight >=
+            moreContent.scrollHeight
+          ) {
+            // Hide the content when scrolled to bottom
+            moreContent.style.display = "none";
+            readMoreLink.innerHTML = "Show More Details";
+            // Remove the scroll event listener
+            moreContent.removeEventListener("scroll", onScroll);
+          }
+        }
+
         if (
           moreContent.style.display === "none" ||
           moreContent.style.display === ""
         ) {
           moreContent.style.display = "block";
           readMoreLink.innerHTML = "Show Less Details";
+          // Add the scroll event listener
+          moreContent.addEventListener("scroll", onScroll);
         } else {
           moreContent.style.display = "none";
           readMoreLink.innerHTML = "Show More Details";
+          // Remove the scroll event listener if content is hidden
+          moreContent.removeEventListener("scroll", onScroll);
         }
       }
     </script>
