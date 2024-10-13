@@ -844,3 +844,45 @@ header {
     justify-content: space-around;
   }
 }
+.read-more-btn {
+  color: #d2b48c;
+  background-color: black;
+  text-decoration: none;
+  cursor: pointer;
+  font-weight: bold;
+  padding: 5px 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.read-more-btn:hover {
+  background-color: black;
+  color: white;
+}
+
+.styled-more-content {
+  margin-top: 10px;
+  padding: 15px;
+  border: 2px solid maroon;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.styled-more-content ul {
+  font-size: inherit;
+  line-height: inherit;
+  margin-left: 20px;
+}
+
+.styled-more-content li {
+  margin-bottom: 8px;
+}
+
+#more-content {
+  margin-top: 10px;
+  padding-top: 10px;
+}
