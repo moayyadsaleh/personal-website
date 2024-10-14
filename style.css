@@ -908,3 +908,42 @@ header {
   margin: 0;
   font-size: 1rem;
 }
+/* Basic styling */
+.home-content {
+  padding: 50px;
+}
+
+.text-one,
+.text-two {
+  font-size: 2em;
+  margin: 10px;
+}
+
+.text-three {
+  font-size: 1.8em;
+  margin: 10px;
+  color: #333;
+  opacity: 0;
+  transition: opacity 0.5s ease-in-out; /* Fade-in/out effect */
+}
+
+/* Add indicator (small dots) for visual feedback */
+.title-indicator {
+  margin-top: 10px;
+}
+
+.title-indicator .dot {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 3px;
+  opacity: 0.4;
+  transition: opacity 0.5s;
+}
+
+.title-indicator .active {
+  background-color: #333;
+  opacity: 1;
+}

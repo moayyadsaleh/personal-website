@@ -59,23 +59,26 @@
       </div>
     </nav>
 
-    <!-- Home Section Start -->
-    <section class="home" id="home">
-      <div class="home-content">
-        <div class="text">
-          <div class="text-one">Welcome to My Portfolio.</div>
-          <div class="text-two">I'm Moayyad,</div>
-          <div class="text-three">
-            Technical Instructional Designer, Learning Technologist, Educator.
-          </div>
-        </div>
-        <div class="button">
-          <a href="#projects">
-            <button>View Projects</button>
-          </a>
-        </div>
+<!-- Home Section Start -->
+<!-- Home Section Start -->
+<section class="home" id="home">
+  <div class="home-content">
+    <div class="text">
+      <div class="text-two">I'm Moayyad,</div>
+      <div class="text-three" id="dynamic-title">
+        <!-- Titles will be dynamically displayed here -->
       </div>
-    </section>
+      <!-- Indicator for dynamic text -->
+      <div class="title-indicator" id="title-indicator"></div>
+    </div>
+    <div class="button">
+      <a href="#projects">
+        <button>View Projects</button>
+      </a>
+    </div>
+  </div>
+</section>
+
 
     <section class="about" id="about">
       <div class="content">
@@ -801,5 +804,49 @@
         }
       }
     </script>
+    <script>// Array of titles to rotate through
+      const titles = [
+        "Technical Instructional Designer",
+        "Learning Technologist",
+        "Learning & Teaching Specialist"
+      ];
+      
+      let titleIndex = 0;
+      const titleElement = document.getElementById('dynamic-title');
+      const indicatorElement = document.getElementById('title-indicator');
+      
+      // Create dynamic dots for indicators
+      titles.forEach(() => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        indicatorElement.appendChild(dot);
+      });
+      const dots = document.querySelectorAll('.dot');
+      
+      // Function to rotate titles with fade effect and indicator update
+      function rotateTitles() {
+        titleElement.style.opacity = 0; // Fade out
+        setTimeout(() => {
+          titleElement.textContent = titles[titleIndex]; // Change title
+          titleElement.style.opacity = 1; // Fade in
+          updateIndicator(titleIndex); // Update indicator
+      
+          titleIndex = (titleIndex + 1) % titles.length; // Cycle through the array
+        }, 1000); // Delay for fade-out to finish (1s)
+      }
+      
+      // Function to update active dot indicator
+      function updateIndicator(index) {
+        dots.forEach((dot, i) => {
+          dot.classList.toggle('active', i === index); // Activate current dot
+        });
+      }
+      
+      // Start rotating every 3 seconds (3000ms)
+      setInterval(rotateTitles, 3000);
+      
+      // Initial call to set the first title and indicator
+      rotateTitles();
+      </script>
   </body>
 </html>
