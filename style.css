@@ -869,6 +869,10 @@ header {
   color: #333;
   font-size: 16px;
   line-height: 1.6;
+  max-height: 500px; /* Increased height to make it bigger */
+  overflow-y: auto; /* Keep vertical scrolling */
+  width: 100%; /* Make it take full width of the parent container */
+  box-sizing: border-box; /* Ensure padding is included in the width */
 }
 
 .styled-more-content ul {
@@ -884,12 +888,6 @@ header {
 #more-content {
   margin-top: 10px;
   padding-top: 10px;
-}
-.styled-more-content {
-  max-height: 400px; /* Adjust height as needed */
-  overflow-y: auto;
-  border: 1px solid maroon; /* Optional styling */
-  padding: 10px; /* Optional styling */
 }
 .skill-item {
   display: flex;
@@ -955,4 +953,24 @@ header {
 .philosophy-container:hover {
   transform: scale(1.05); /* Zoom in slightly */
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
+.projects-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px; /* Decreased the gap between the project divs */
+  justify-content: space-between;
+}
+.project-container {
+  max-width: 530px; /* Adjust the width to your preference */
+  margin: 0 auto; /* This centers the div on the page */
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow for a polished look */
+  border-radius: 10px; /* Optional: Rounded corners for a more modern look */
+  overflow: hidden;
+}
+.course-name {
+  font-size: 20px; /* Adjust the size to your preference */
+  font-weight: bold; /* You can keep it bold or remove this for a lighter look */
+  margin-bottom: 10px; /* Adjust spacing as needed */
+  color: #333; /* Optional: Ensure text color fits your design */
 }
