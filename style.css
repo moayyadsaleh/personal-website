@@ -947,3 +947,13 @@ header {
   background-color: #333;
   opacity: 1;
 }
+/* Hover effect: Zoom in and shadow */
+.skill-item:hover {
+  transform: scale(1.05); /* Zoom in slightly */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Add shadow */
+}
+/* Hover effect: Zoom in and shadow */
+.philosophy-container:hover {
+  transform: scale(1.05); /* Zoom in slightly */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1); /* Add shadow on hover */
+}
