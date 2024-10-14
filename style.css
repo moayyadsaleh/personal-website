@@ -892,3 +892,19 @@ header {
   border: 1px solid maroon; /* Optional styling */
   padding: 10px; /* Optional styling */
 }
+.skill-item {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.skill-icon {
+  font-size: 1.5rem; /* Adjust icon size */
+  margin-right: 15px;
+  color: maroon; /* Set icon color to maroon */
+}
+
+.skill-item p {
+  margin: 0;
+  font-size: 1rem;
+}
