@@ -732,7 +732,7 @@ footer a {
 .project-container {
   max-width: 800px;
   margin: 20px auto;
-  background-color: #fff;
+  background-color: whitesmoke;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 8px;
@@ -784,7 +784,7 @@ header {
 .philosophy-container {
   max-width: 800px;
   margin: 20px auto;
-  background-color: #fff;
+  background-color: whitesmoke;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 8px;
@@ -828,7 +828,7 @@ header {
 
 .contact-link i {
   font-size: 30px; /* Increase the icon font size */
-  color: #fff; /* Whitesmoke color for icons */
+  color: whitesmoke; /* Whitesmoke color for icons */
   margin-bottom: 5px;
 }
 
@@ -857,7 +857,7 @@ header {
 
 .read-more-btn:hover {
   background-color: black;
-  color: white;
+  color: whitesmoke;
 }
 
 .styled-more-content {
@@ -865,7 +865,7 @@ header {
   padding: 15px;
   border: 2px solid maroon;
   border-radius: 8px;
-  background-color: #f9f9f9;
+  background-color: whitesmoke;
   color: #333;
   font-size: 16px;
   line-height: 1.6;
@@ -933,7 +933,7 @@ header {
   display: inline-block;
   height: 8px;
   width: 8px;
-  background-color: #bbb;
+  background-color: whitesmoke;
   border-radius: 50%;
   margin: 0 3px;
   opacity: 0.4;
