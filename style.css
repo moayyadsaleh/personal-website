@@ -974,3 +974,41 @@ header {
   margin-bottom: 10px; /* Adjust spacing as needed */
   color: #333; /* Optional: Ensure text color fits your design */
 }
+.project-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-img {
+  transition: transform 0.3s ease;
+}
+
+.project-container:hover .project-img {
+  transform: scale(1.05); /* Slight zoom effect */
+}
+.project-container {
+  transition: box-shadow 0.3s ease, border-color 0.3s ease;
+  border: 2px solid transparent;
+}
+
+.project-container:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  border-color: maroon; /* Adds a subtle border color change */
+}
+.course-name {
+  transition: color 0.3s ease;
+}
+
+.project-container:hover .course-name {
+  color: maroon; /* Change to desired color */
+}
+.about .left img {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+  border-radius: 10px; /* Rounded corners for a modern look */
+  opacity: 1; /* Full opacity by default */
+}
+
+.about .left img:hover {
+  transform: scale(1.05); /* Zoom-in effect on hover */
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2); /* Shadow effect to elevate the image */
+}
