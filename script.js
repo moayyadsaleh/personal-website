@@ -50,26 +50,28 @@ $(document).ready(function () {
     $(this).next(".accordion-content").slideToggle();
   });
 });
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", function () {
   const educationItems = document.querySelectorAll(
     ".education-certifications .education-details li"
   );
 
-  const observer = new IntersectionObserver(
-    (entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("fadeInUp");
-          observer.unobserve(entry.target); // Trigger animation once
-        }
-      });
-    },
-    {
-      threshold: 0.1, // Adjust as needed
-    }
-  );
+  // Define the options for the observer
+  const options = {
+    threshold: 0.3, // Trigger when 30% of the element is in view
+  };
 
-  educationItems.forEach((item) => {
-    observer.observe(item);
-  });
+  // Create the observer, adding the 'visible' class when items enter the viewport
+  const observer = new IntersectionObserver((entries, observer) => {
+    entries.forEach((entry, index) => {
+      if (entry.isIntersecting) {
+        setTimeout(() => {
+          entry.target.classList.add("visible");
+        }, index * 200); // Stagger animation with delay
+        observer.unobserve(entry.target); // Stop observing once animation is triggered
+      }
+    });
+  }, options);
+
+  // Observe each list item
+  educationItems.forEach((item) => observer.observe(item));
 });
