@@ -1224,3 +1224,6 @@ header {
 .education-certifications .education-details li:hover span strong {
   color: #d2b48c;
 }
+html {
+  scroll-padding-top: 165px; /* Try increasing this to show a bit more above the section */
+}

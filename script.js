@@ -75,3 +75,14 @@ document.addEventListener("DOMContentLoaded", function () {
   // Observe each list item
   educationItems.forEach((item) => observer.observe(item));
 });
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetElement = document.querySelector(this.getAttribute("href"));
+    const offset = 60; // Adjust based on navbar height
+    window.scrollTo({
+      top: targetElement.offsetTop - offset,
+      behavior: "smooth",
+    });
+  });
+});
