@@ -734,7 +734,7 @@ footer a {
 .project-container {
   max-width: 800px;
   margin: 20px auto;
-  background-color: whitesmoke;
+  background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 8px;
@@ -786,7 +786,7 @@ header {
 .philosophy-container {
   max-width: 800px;
   margin: 20px auto;
-  background-color: whitesmoke;
+  background-color: white;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
   padding: 20px;
   border-radius: 8px;
@@ -859,7 +859,7 @@ header {
 
 .read-more-btn:hover {
   background-color: black;
-  color: whitesmoke;
+  color: white;
 }
 
 .styled-more-content {
@@ -867,7 +867,7 @@ header {
   padding: 15px;
   border: 2px solid maroon;
   border-radius: 8px;
-  background-color: whitesmoke;
+  background-color: white;
   color: #333;
   font-size: 16px;
   line-height: 1.6;
