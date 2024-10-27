@@ -86,3 +86,14 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     });
   });
 });
+document
+  .querySelector('a[href="#about"]')
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector("#about");
+    const extraScroll = 200; // Increase this value to scroll further down
+    window.scrollTo({
+      top: target.offsetTop + extraScroll, // Scrolls further down by `extraScroll` pixels
+      behavior: "smooth",
+    });
+  });
