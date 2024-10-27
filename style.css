@@ -1209,11 +1209,11 @@ header {
 
 /* Icon color and hover effect */
 .icon {
-  color: maroon;
+  color: #d2b48c;
 }
 .education-certifications .education-details li:hover .icon {
   transform: rotate(3deg); /* Minor rotation */
-  color: #d2b48c; /* Medium gray for icon */
+  color: maroon; /* Medium gray for icon */
 }
 
 /* Styling for strong labels */
@@ -1224,7 +1224,7 @@ header {
 
 /* Hover effect to change color to tan */
 .education-certifications .education-details li:hover span strong {
-  color: #d2b48c;
+  color: maroon;
 }
 html {
   scroll-padding-top: 165px; /* Try increasing this to show a bit more above the section */
