@@ -329,8 +329,10 @@ section .button button:hover {
   transition: all 0.4s ease;
 }
 .services .boxes .box:hover {
-  background: black;
-  color: whitesmoke;
+  background: white; /* Very light gray */
+  color: #333; /* Dark gray text */
+  transform: scale(1.02); /* Subtle scale for gentle effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Lighter shadow */
 }
 .services .boxes .box .icon {
   height: 50px;
@@ -350,15 +352,15 @@ section .button button:hover {
 }
 .services .boxes .box:hover .topic,
 .services .boxes .box:hover p {
-  color: whitesmoke;
+  color: black;
   transition: all 0.4s ease;
 }
 .services .boxes .box:hover .topic {
-  color: #d2b48c;
+  color: black;
 }
 
 .services .boxes .box:hover p {
-  color: whitesmoke;
+  color: black;
 }
 /* Contact Me CSS */
 .contact {

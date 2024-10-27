@@ -97,3 +97,22 @@ document
       behavior: "smooth",
     });
   });
+function revealOnScroll() {
+  const items = document.querySelectorAll(
+    ".education-certifications .education-details li"
+  );
+
+  items.forEach((item, index) => {
+    const itemTop = item.getBoundingClientRect().top;
+    const windowHeight = window.innerHeight;
+
+    // Check if the item is within the viewport
+    if (itemTop < windowHeight - 100) {
+      item.classList.add("show");
+    }
+  });
+}
+
+// Run revealOnScroll on load and on scroll
+window.addEventListener("scroll", revealOnScroll);
+window.addEventListener("load", revealOnScroll);
