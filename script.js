@@ -50,3 +50,26 @@ $(document).ready(function () {
     $(this).next(".accordion-content").slideToggle();
   });
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const educationItems = document.querySelectorAll(
+    ".education-certifications .education-details li"
+  );
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("fadeInUp");
+          observer.unobserve(entry.target); // Trigger animation once
+        }
+      });
+    },
+    {
+      threshold: 0.1, // Adjust as needed
+    }
+  );
+
+  educationItems.forEach((item) => {
+    observer.observe(item);
+  });
+});

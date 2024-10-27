@@ -1124,3 +1124,85 @@ header {
 .box-6 {
   animation-delay: 1.2s;
 }
+/* Center the content inside education-details */
+.education-certifications .education-details {
+  display: flex;
+  justify-content: center;
+}
+
+.education-certifications .education-details ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* Styling each list item for a closer layout */
+.education-certifications .education-details li {
+  display: flex;
+  align-items: center;
+  gap: 8px; /* Reduced gap between icon and text */
+  padding: 8px 16px; /* Reduced padding */
+  border-radius: 6px;
+  margin-bottom: 10px; /* Reduced margin between items */
+  border-bottom: 1px solid #ddd;
+  transition: transform 0.2s ease-in-out, color 0.2s ease,
+    background-color 0.2s ease;
+  opacity: 0;
+  transform: translateY(10px);
+  animation: fadeInUp 0.5s forwards;
+}
+
+/* Adding space at the top of the first list item */
+.education-certifications .education-details li:first-child {
+  margin-top: 20px; /* Adjust this value as needed */
+}
+
+/* Ensure icons are aligned vertically and adjust position */
+.education-certifications .icon {
+  font-size: 1.6rem; /* Reduced font size for icons */
+  margin-right: 6px; /* Adjusted margin for closer layout */
+  min-width: 24px; /* Adjusted width to keep alignment */
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+/* Hover effects for each list item */
+/* Hover effects for each list item */
+.education-certifications .education-details li:hover {
+  background: white; /* Very light gray */
+  color: #333; /* Dark gray text */
+  transform: scale(1.02); /* Subtle scale for gentle effect */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08); /* Lighter shadow */
+}
+
+.education-certifications .education-details li:hover .icon {
+  transform: rotate(10deg); /* Slightly reduced rotation */
+  color: #fff;
+}
+.icon {
+  color: maroon;
+}
+/* Styling for strong labels */
+.education-certifications .education-details li span strong {
+  font-weight: bold;
+  color: black;
+}
+
+/* Icon hover effect */
+.education-certifications .education-details li:hover .icon {
+  transform: rotate(3deg); /* Minor rotation */
+  color: #d2b48c; /* Medium gray for icon */
+}
+/* Animation keyframe for fade-in effect */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+/* Hover effect to change color to tan */
+.education-certifications .education-details li:hover span strong {
+  color: #d2b48c;
+}
