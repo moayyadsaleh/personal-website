@@ -1229,3 +1229,12 @@ header {
 html {
   scroll-padding-top: 165px; /* Try increasing this to show a bit more above the section */
 }
+.skill-item {
+  padding-bottom: 15px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1); /* Light, subtle line */
+  margin-bottom: 20px; /* Space between each item */
+}
+
+.skill-item:last-child {
+  border-bottom: none; /* Remove border for the last item */
+}
