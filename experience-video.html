@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Experience the Full Project</title>
     <link rel="stylesheet" href="styles.css" />
-    <!-- Optional, for styling -->
     <style>
       body {
         background-color: #f4f4f4;
@@ -35,9 +34,9 @@
         margin-bottom: 20px;
       }
 
-      .video-container iframe {
+      .video-container video {
         width: 100%;
-        height: 600px;
+        height: auto;
         border: none;
         border-radius: 8px;
       }
@@ -99,13 +98,10 @@
       </p>
 
       <!-- Video Embed -->
-      <iframe
-        src="./Images/Transformation.mp4"
-        frameborder="0"
-        allow="autoplay; fullscreen"
-        allowfullscreen
-      >
-      </iframe>
+      <video id="transformation-video" controls>
+        <source src="./Images/Transformation.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
       <!-- Back Button -->
       <div class="home">
@@ -116,5 +112,19 @@
         </div>
       </div>
     </div>
+
+    <script>
+      // Optional: Additional customization for video behavior
+      const video = document.getElementById("transformation-video");
+
+      // Example: Add custom event listeners
+      video.addEventListener("play", () => {
+        console.log("Video started playing!");
+      });
+
+      video.addEventListener("pause", () => {
+        console.log("Video paused.");
+      });
+    </script>
   </body>
 </html>
