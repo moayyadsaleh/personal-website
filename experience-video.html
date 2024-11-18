@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Experience the Full Project</title>
+    <link rel="stylesheet" href="styles.css" />
+    <!-- Optional, for styling -->
+    <style>
+      body {
+        background-color: #f4f4f4;
+        margin: 0;
+        padding: 0;
+      }
+
+      .video-container {
+        max-width: 1100px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        text-align: center;
+      }
+
+      .video-container h1 {
+        font-size: 2rem;
+        color: #333;
+        margin-bottom: 15px;
+      }
+
+      .video-container p {
+        font-size: 1rem;
+        color: #555;
+        margin-bottom: 20px;
+      }
+
+      .video-container iframe {
+        width: 100%;
+        height: 600px;
+        border: none;
+        border-radius: 8px;
+      }
+
+      .project-description {
+        text-align: left;
+        margin-top: 20px;
+      }
+
+      .project-description p {
+        font-size: 1rem;
+        color: #333;
+        line-height: 1.6;
+      }
+
+      /* Back Button Styling */
+      .home .button {
+        margin: 14px 0;
+        text-align: center;
+      }
+
+      .home .button button {
+        outline: none;
+        padding: 8px 16px;
+        border-radius: 6px;
+        font-size: 25px;
+        font-weight: 400;
+        background: #800000;
+        color: #d2b48c;
+        cursor: pointer;
+        border: 2px solid transparent;
+        transition: all 0.4s ease;
+        font-family: serif; /* Change button font to serif */
+      }
+
+      .home .button button:hover {
+        border-color: #d2b48c;
+        background-color: black;
+        color: whitesmoke;
+      }
+
+      /* Remove default button styling for consistency */
+      .back-link {
+        margin-top: 30px;
+        font-family: serif;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="video-container">
+      <h1>Transforming Outdated PowerPoints into Modern Presentations</h1>
+      <p>
+        In this video, you will experience a slide-by-slide transformation of an
+        outdated PowerPoint presentation. First, you will see the initial
+        version of the presentation, which will highlight the issues with design
+        and cognitive load. After that, you'll view the transformed version,
+        which showcases a sleek, modern design that effectively manages
+        cognitive load and enhances the viewer's and presenter's experience.
+      </p>
+
+      <!-- Video Embed -->
+      <iframe
+        src="./Images/Transformation.mp4"
+        frameborder="0"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+      >
+      </iframe>
+
+      <!-- Back Button -->
+      <div class="home">
+        <div class="button">
+          <button onclick="window.location.href='index.html'">
+            Back to Projects
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
