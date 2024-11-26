@@ -1238,3 +1238,13 @@ html {
 .skill-item:last-child {
   border-bottom: none; /* Remove border for the last item */
 }
+.maroon-link {
+  color: maroon; /* Set text color to maroon */
+  text-decoration: none; /* Remove default underline */
+  border-bottom: 2px solid maroon; /* Add a maroon line below */
+  padding-bottom: 2px; /* Add some space between text and the line */
+}
+
+.maroon-link:hover {
+  color: #800000; /* Darker maroon on hover (optional) */
+}
