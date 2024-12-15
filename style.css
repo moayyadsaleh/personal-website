@@ -409,6 +409,10 @@ footer .text span a:hover {
   box-shadow: rgba(0, 0, 0, 0.15);
   display: none;
 }
+/* Completely hide the scroll button */
+.scroll-button {
+  display: none !important;
+}
 .fas.fa-phone {
   display: none !important;
 }
