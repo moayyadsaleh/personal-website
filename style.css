@@ -1257,3 +1257,6 @@ html {
 html {
   scroll-behavior: auto; /* Default scrolling behavior */
 }
+nav.sticky {
+  will-change: transform;
+}

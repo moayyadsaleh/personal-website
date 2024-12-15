@@ -1,16 +1,20 @@
-// Sticky Navigation Menu JS Code
+// Sticky Navigation Menu JS Code with Debounced Scroll Event
 let nav = document.querySelector("nav");
 let scrollBtn = document.querySelector(".scroll-button a");
 
-window.onscroll = function () {
-  if (document.documentElement.scrollTop > 20) {
-    nav.classList.add("sticky");
-    scrollBtn.style.display = "block";
-  } else {
-    nav.classList.remove("sticky");
-    scrollBtn.style.display = "none";
-  }
-};
+let debounceTimer;
+window.addEventListener("scroll", () => {
+  clearTimeout(debounceTimer);
+  debounceTimer = setTimeout(() => {
+    if (document.documentElement.scrollTop > 20) {
+      nav.classList.add("sticky");
+      scrollBtn.style.display = "block";
+    } else {
+      nav.classList.remove("sticky");
+      scrollBtn.style.display = "none";
+    }
+  }, 50); // Debounce delay
+});
 
 // Side Navigation Menu JS Code
 let body = document.querySelector("body");
@@ -34,8 +38,8 @@ function closeMenu() {
   navBar.classList.remove("active");
   menuBtn.style.opacity = "1";
   menuBtn.style.pointerEvents = "auto";
-  body.style.overflow = "auto"; // Restore scrolling
-  scrollBtn.style.pointerEvents = "auto"; // Restore pointer events
+  body.style.overflow = ""; // Reset to default scrolling behavior
+  scrollBtn.style.pointerEvents = "auto";
 }
 
 // Side Navigation Bar Close While Clicking Navigation Links
@@ -46,7 +50,7 @@ navLinks.forEach((link) => {
   });
 });
 
-// Smooth Scroll with Offset for Navigation Links
+// Smooth Scroll with Offset for Navigation Links (Disable Smooth Scroll on Mobile)
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
@@ -54,14 +58,17 @@ document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
     const offset = 60; // Adjust based on navbar height
 
     if (targetElement) {
-      window.scrollTo({
-        top: targetElement.offsetTop - offset,
-        behavior: "smooth",
-      });
+      if (!("ontouchstart" in window)) {
+        window.scrollTo({
+          top: targetElement.offsetTop - offset,
+          behavior: "smooth",
+        });
+      } else {
+        window.scrollTo(0, targetElement.offsetTop - offset);
+      }
     }
 
-    // Ensure the menu closes and scrolling is restored
-    closeMenu();
+    closeMenu(); // Ensure the menu closes after scrolling
   });
 });
 
@@ -81,16 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Define the options for the observer
   const options = {
-    threshold: 0.3, // Trigger when 30% of the element is in view
+    threshold: 0.1, // Lower threshold for faster triggering
   };
 
   // Create the observer, adding the 'visible' class when items enter the viewport
   const observer = new IntersectionObserver((entries, observer) => {
-    entries.forEach((entry, index) => {
+    entries.forEach((entry) => {
       if (entry.isIntersecting) {
-        setTimeout(() => {
-          entry.target.classList.add("visible");
-        }, index * 200); // Stagger animation with delay
+        entry.target.classList.add("visible");
         observer.unobserve(entry.target); // Stop observing once animation is triggered
       }
     });
@@ -100,17 +105,22 @@ document.addEventListener("DOMContentLoaded", function () {
   educationItems.forEach((item) => observer.observe(item));
 });
 
-// Smooth Scroll for Specific Section with Extra Offset
+// Smooth Scroll for Specific Section with Extra Offset (Disable Smooth Scroll on Mobile)
 document
   .querySelector('a[href="#about"]')
   .addEventListener("click", function (e) {
     e.preventDefault();
     const target = document.querySelector("#about");
     const extraScroll = 200; // Increase this value to scroll further down
-    window.scrollTo({
-      top: target.offsetTop + extraScroll, // Scrolls further down by `extraScroll` pixels
-      behavior: "smooth",
-    });
+
+    if (!("ontouchstart" in window)) {
+      window.scrollTo({
+        top: target.offsetTop + extraScroll,
+        behavior: "smooth",
+      });
+    } else {
+      window.scrollTo(0, target.offsetTop + extraScroll);
+    }
 
     closeMenu(); // Ensure the menu closes after scrolling
   });
@@ -121,7 +131,7 @@ function revealOnScroll() {
     ".education-certifications .education-details li"
   );
 
-  items.forEach((item, index) => {
+  items.forEach((item) => {
     const itemTop = item.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
