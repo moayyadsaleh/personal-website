@@ -1,9 +1,7 @@
 // Sticky Navigation Menu JS Code
-
 let nav = document.querySelector("nav");
 let scrollBtn = document.querySelector(".scroll-button a");
-console.log(scrollBtn);
-let val;
+
 window.onscroll = function () {
   if (document.documentElement.scrollTop > 20) {
     nav.classList.add("sticky");
@@ -14,42 +12,68 @@ window.onscroll = function () {
   }
 };
 
-// Side NavIgation Menu JS Code
+// Side Navigation Menu JS Code
 let body = document.querySelector("body");
 let navBar = document.querySelector(".navbar");
 let menuBtn = document.querySelector(".menu-btn");
 let cancelBtn = document.querySelector(".cancel-btn");
+
 menuBtn.onclick = function () {
   navBar.classList.add("active");
   menuBtn.style.opacity = "0";
   menuBtn.style.pointerEvents = "none";
-  body.style.overflow = "hidden";
-  scrollBtn.style.pointerEvents = "none";
+  body.style.overflow = "hidden"; // Lock scrolling when menu opens
 };
+
 cancelBtn.onclick = function () {
+  closeMenu();
+};
+
+// Close menu function to avoid repetition
+function closeMenu() {
   navBar.classList.remove("active");
   menuBtn.style.opacity = "1";
   menuBtn.style.pointerEvents = "auto";
-  body.style.overflow = "auto";
-  scrollBtn.style.pointerEvents = "auto";
-};
-
-// Side Navigation Bar Close While We Click On Navigation Links
-let navLinks = document.querySelectorAll(".menu li a");
-for (var i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener("click", function () {
-    navBar.classList.remove("active");
-    menuBtn.style.opacity = "1";
-    menuBtn.style.pointerEvents = "auto";
-  });
+  body.style.overflow = "auto"; // Restore scrolling
+  scrollBtn.style.pointerEvents = "auto"; // Restore pointer events
 }
 
+// Side Navigation Bar Close While Clicking Navigation Links
+let navLinks = document.querySelectorAll(".menu li a");
+navLinks.forEach((link) => {
+  link.addEventListener("click", function () {
+    closeMenu();
+  });
+});
+
+// Smooth Scroll with Offset for Navigation Links
+document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetElement = document.querySelector(this.getAttribute("href"));
+    const offset = 60; // Adjust based on navbar height
+
+    if (targetElement) {
+      window.scrollTo({
+        top: targetElement.offsetTop - offset,
+        behavior: "smooth",
+      });
+    }
+
+    // Ensure the menu closes and scrolling is restored
+    closeMenu();
+  });
+});
+
+// Accordion Toggle Functionality
 $(document).ready(function () {
   $(".accordion-header").click(function () {
     $(this).toggleClass("active");
     $(this).next(".accordion-content").slideToggle();
   });
 });
+
+// Intersection Observer for Animating Education Items
 document.addEventListener("DOMContentLoaded", function () {
   const educationItems = document.querySelectorAll(
     ".education-certifications .education-details li"
@@ -75,17 +99,8 @@ document.addEventListener("DOMContentLoaded", function () {
   // Observe each list item
   educationItems.forEach((item) => observer.observe(item));
 });
-document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
-  anchor.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetElement = document.querySelector(this.getAttribute("href"));
-    const offset = 60; // Adjust based on navbar height
-    window.scrollTo({
-      top: targetElement.offsetTop - offset,
-      behavior: "smooth",
-    });
-  });
-});
+
+// Smooth Scroll for Specific Section with Extra Offset
 document
   .querySelector('a[href="#about"]')
   .addEventListener("click", function (e) {
@@ -96,7 +111,11 @@ document
       top: target.offsetTop + extraScroll, // Scrolls further down by `extraScroll` pixels
       behavior: "smooth",
     });
+
+    closeMenu(); // Ensure the menu closes after scrolling
   });
+
+// Reveal Elements on Scroll
 function revealOnScroll() {
   const items = document.querySelectorAll(
     ".education-certifications .education-details li"
@@ -114,16 +133,5 @@ function revealOnScroll() {
 }
 
 // Run revealOnScroll on load and on scroll
-document.querySelectorAll(".menu-item").forEach((item) => {
-  item.addEventListener("click", function (e) {
-    e.preventDefault();
-    const targetId = this.getAttribute("href").slice(1);
-    const targetSection = document.getElementById(targetId);
-
-    if (targetSection) {
-      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
-      document.body.style.overflow = "auto"; // Restore scrolling
-      document.querySelector(".hamburger-menu").classList.remove("open"); // Close the menu
-    }
-  });
-});
+window.addEventListener("load", revealOnScroll);
+window.addEventListener("scroll", revealOnScroll);
