@@ -1,19 +1,27 @@
-// Sticky Navigation Menu JS Code with Debounced Scroll Event
+// Sticky Navigation Menu JS Code with requestAnimationFrame
 let nav = document.querySelector("nav");
 let scrollBtn = document.querySelector(".scroll-button a");
 
-let debounceTimer;
+let lastKnownScrollPosition = 0;
+let ticking = false;
+
 window.addEventListener("scroll", () => {
-  clearTimeout(debounceTimer);
-  debounceTimer = setTimeout(() => {
-    if (document.documentElement.scrollTop > 20) {
-      nav.classList.add("sticky");
-      scrollBtn.style.display = "block";
-    } else {
-      nav.classList.remove("sticky");
-      scrollBtn.style.display = "none";
-    }
-  }, 50); // Debounce delay
+  lastKnownScrollPosition = window.scrollY;
+
+  if (!ticking) {
+    window.requestAnimationFrame(() => {
+      if (lastKnownScrollPosition > 20) {
+        nav.classList.add("sticky");
+        scrollBtn.style.display = "block";
+      } else {
+        nav.classList.remove("sticky");
+        scrollBtn.style.display = "none";
+      }
+      ticking = false;
+    });
+
+    ticking = true;
+  }
 });
 
 // Side Navigation Menu JS Code
@@ -26,7 +34,7 @@ menuBtn.onclick = function () {
   navBar.classList.add("active");
   menuBtn.style.opacity = "0";
   menuBtn.style.pointerEvents = "none";
-  body.style.overflow = "hidden"; // Lock scrolling when menu opens
+  body.style.overflow = "hidden";
 };
 
 cancelBtn.onclick = function () {
@@ -38,7 +46,7 @@ function closeMenu() {
   navBar.classList.remove("active");
   menuBtn.style.opacity = "1";
   menuBtn.style.pointerEvents = "auto";
-  body.style.overflow = ""; // Reset to default scrolling behavior
+  body.style.overflow = "";
   scrollBtn.style.pointerEvents = "auto";
 }
 
@@ -50,25 +58,18 @@ navLinks.forEach((link) => {
   });
 });
 
-// Smooth Scroll with Offset for Navigation Links (Disable Smooth Scroll on Mobile)
+// Smooth Scroll with Offset for Navigation Links (Smooth Scroll Disabled)
 document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
   anchor.addEventListener("click", function (e) {
     e.preventDefault();
     const targetElement = document.querySelector(this.getAttribute("href"));
-    const offset = 60; // Adjust based on navbar height
+    const offset = 60;
 
     if (targetElement) {
-      if (!("ontouchstart" in window)) {
-        window.scrollTo({
-          top: targetElement.offsetTop - offset,
-          behavior: "smooth",
-        });
-      } else {
-        window.scrollTo(0, targetElement.offsetTop - offset);
-      }
+      window.scrollTo(0, targetElement.offsetTop - offset);
     }
 
-    closeMenu(); // Ensure the menu closes after scrolling
+    closeMenu();
   });
 });
 
@@ -86,46 +87,23 @@ document.addEventListener("DOMContentLoaded", function () {
     ".education-certifications .education-details li"
   );
 
-  // Define the options for the observer
   const options = {
     threshold: 0.1, // Lower threshold for faster triggering
   };
 
-  // Create the observer, adding the 'visible' class when items enter the viewport
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach((entry) => {
       if (entry.isIntersecting) {
         entry.target.classList.add("visible");
-        observer.unobserve(entry.target); // Stop observing once animation is triggered
+        observer.unobserve(entry.target);
       }
     });
   }, options);
 
-  // Observe each list item
   educationItems.forEach((item) => observer.observe(item));
 });
 
-// Smooth Scroll for Specific Section with Extra Offset (Disable Smooth Scroll on Mobile)
-document
-  .querySelector('a[href="#about"]')
-  .addEventListener("click", function (e) {
-    e.preventDefault();
-    const target = document.querySelector("#about");
-    const extraScroll = 200; // Increase this value to scroll further down
-
-    if (!("ontouchstart" in window)) {
-      window.scrollTo({
-        top: target.offsetTop + extraScroll,
-        behavior: "smooth",
-      });
-    } else {
-      window.scrollTo(0, target.offsetTop + extraScroll);
-    }
-
-    closeMenu(); // Ensure the menu closes after scrolling
-  });
-
-// Reveal Elements on Scroll
+// Reveal Elements on Scroll with requestAnimationFrame
 function revealOnScroll() {
   const items = document.querySelectorAll(
     ".education-certifications .education-details li"
@@ -135,13 +113,30 @@ function revealOnScroll() {
     const itemTop = item.getBoundingClientRect().top;
     const windowHeight = window.innerHeight;
 
-    // Check if the item is within the viewport
     if (itemTop < windowHeight - 100) {
       item.classList.add("show");
     }
   });
 }
 
-// Run revealOnScroll on load and on scroll
-window.addEventListener("load", revealOnScroll);
-window.addEventListener("scroll", revealOnScroll);
+let scrollTimeout;
+window.addEventListener("scroll", () => {
+  if (!scrollTimeout) {
+    scrollTimeout = requestAnimationFrame(() => {
+      revealOnScroll();
+      scrollTimeout = null;
+    });
+  }
+});
+
+// Smooth Scroll for Specific Section with Extra Offset (Smooth Scroll Disabled)
+document
+  .querySelector('a[href="#about"]')
+  .addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector("#about");
+    const extraScroll = 200;
+
+    window.scrollTo(0, target.offsetTop + extraScroll);
+    closeMenu();
+  });
