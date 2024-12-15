@@ -1259,3 +1259,16 @@ html {
 nav.sticky {
   will-change: transform;
 }
+
+body {
+  margin: 0 !important;
+  overflow-y: scroll !important;
+  overflow-x: hidden !important;
+  overscroll-behavior: none !important;
+  -webkit-overflow-scrolling: touch !important;
+  scroll-behavior: auto !important;
+}
+
+.element-with-transform {
+  will-change: transform !important;
+}
