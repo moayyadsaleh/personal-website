@@ -116,3 +116,15 @@ function revealOnScroll() {
 // Run revealOnScroll on load and on scroll
 window.addEventListener("scroll", revealOnScroll);
 window.addEventListener("load", revealOnScroll);
+document.querySelectorAll(".menu-item").forEach((item) => {
+  item.addEventListener("click", function (e) {
+    e.preventDefault();
+    const targetId = this.getAttribute("href").slice(1);
+    const targetSection = document.getElementById(targetId);
+
+    if (targetSection) {
+      targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.querySelector(".hamburger-menu").classList.remove("open"); // Close the menu
+    }
+  });
+});
