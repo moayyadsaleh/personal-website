@@ -409,7 +409,12 @@ footer .text span a:hover {
   box-shadow: rgba(0, 0, 0, 0.15);
   display: none;
 }
-
+.fas.fa-phone {
+  display: none !important;
+}
+.contact-link[href^="mailto:"] span {
+  display: none;
+}
 /* Responsive Media Query */
 @media (max-width: 1190px) {
   section .content {
