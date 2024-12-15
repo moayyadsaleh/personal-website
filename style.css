@@ -1252,18 +1252,3 @@ html {
 .maroon-link:hover {
   color: #800000; /* Darker maroon on hover (optional) */
 }
-html {
-  scroll-behavior: smooth;
-}
-body,
-html {
-  overflow-y: auto; /* Ensure vertical scrolling is enabled */
-  touch-action: manipulation; /* Improves touch responsiveness */
-  overscroll-behavior: none;
-}
-.menu-item {
-  display: block;
-  padding: 1em;
-  color: white;
-  text-decoration: none;
-}
