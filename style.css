@@ -37,11 +37,12 @@ nav .navbar .menu a {
   color: whitesmoke; /* Set your desired text color */
 }
 nav {
-  position: sticky;
-  top: 0;
-  z-index: 998;
+  position: fixed;
+  width: 100%;
   padding: 20px 0;
-  background: black; /* Ensure a background color for sticky behavior */
+  z-index: 998;
+  transition: all 0.3s ease;
+  font-family: serif;
 }
 nav.sticky {
   background: black;
@@ -1258,17 +1259,4 @@ html {
 }
 nav.sticky {
   will-change: transform;
-}
-
-body {
-  margin: 0 !important;
-  overflow-y: scroll !important;
-  overflow-x: hidden !important;
-  overscroll-behavior: none !important;
-  -webkit-overflow-scrolling: touch !important;
-  scroll-behavior: auto !important;
-}
-
-.element-with-transform {
-  will-change: transform !important;
 }
