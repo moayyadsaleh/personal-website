@@ -1257,3 +1257,9 @@ html {
   touch-action: manipulation; /* Improves touch responsiveness */
   overscroll-behavior: none;
 }
+.menu-item {
+  display: block;
+  padding: 1em;
+  color: white;
+  text-decoration: none;
+}

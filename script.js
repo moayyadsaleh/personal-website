@@ -114,8 +114,6 @@ function revealOnScroll() {
 }
 
 // Run revealOnScroll on load and on scroll
-window.addEventListener("scroll", revealOnScroll);
-window.addEventListener("load", revealOnScroll);
 document.querySelectorAll(".menu-item").forEach((item) => {
   item.addEventListener("click", function (e) {
     e.preventDefault();
@@ -124,6 +122,7 @@ document.querySelectorAll(".menu-item").forEach((item) => {
 
     if (targetSection) {
       targetSection.scrollIntoView({ behavior: "smooth", block: "start" });
+      document.body.style.overflow = "auto"; // Restore scrolling
       document.querySelector(".hamburger-menu").classList.remove("open"); // Close the menu
     }
   });
